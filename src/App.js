@@ -1,16 +1,19 @@
-import logo from './logo.svg';
-import { Grid, Typography, Button, Paper} from "@material-ui/core";
+import React,{useState} from 'react';
+import { Switch, Grid, Typography, Button, Paper} from "@material-ui/core";
 import { ThemeProvider, createMuiTheme} from "@material-ui/core";
 
 function App() {
-  const theme = createMuiTheme({
+  const [darkMode, setDarkMode] = useState(false);
+
+  const darkTheme = createMuiTheme({
     palette:{
-      type:"dark",
+      type:"dark" 
     },
   });
+  const lightTheme = createMuiTheme({});
     
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
       <Paper style={{height:"100vh"}}>
         <Grid container direction="column">
           <Typography variant="h1">This is my App!</Typography>
@@ -20,6 +23,7 @@ function App() {
           <Button variant="contained" color="secondary">
             This is another button
           </Button>
+          <Switch checked={darkMode} onChange={() => setDarkMode(!darkMode)}/>
         </Grid>
       </Paper>
     </ThemeProvider>
