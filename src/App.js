@@ -1,24 +1,5 @@
-import { useState } from "react";
-import Splash from "./Components/SplashScreen";
-import { ThemeProvider } from "styled-components";
-
-
-const LightTheme = {
-  pageBackground: "white",
-  titleColor: "#dc658b",
-  tagLineColor: "black"
-};
-
-const DarkTheme = {
-  pageBackground: "#282c36",
-  titleColor: "lightpink",
-  tagLineColor: "lavender"
-}
-
-const themes = {
-  light: LightTheme,
-  dark: DarkTheme,
-}
+import logo from './logo.svg';
+import './App.css';
 
 function App() {
   return (
